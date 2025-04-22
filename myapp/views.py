@@ -14,12 +14,13 @@ def simple_view(request):
         if form.is_valid():
             # Extract data from the form
             name = form.cleaned_data['name']
+            phone = form.cleaned_data['phone']
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
             # Create a ContactMessage object and save it to the database
-            contact_message = ContactMessage(name=name, email=email, subject=subject, message=message)
+            contact_message = ContactMessage(name=name,phone=phone, email=email, subject=subject, message=message)
             contact_message.save()
 
             return redirect('simple_view')  # Redirect back to the same page
@@ -48,12 +49,13 @@ def contact(request):
         if form.is_valid():
             # Extract data from the form
             name = form.cleaned_data['name']
+            phone = form.cleaned_data['phone']
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
 
             # Create a ContactMessage object and save it to the database
-            contact_message = ContactMessage(name=name, email=email, subject=subject, message=message)
+            contact_message = ContactMessage(name=name,phone=phone, email=email, subject=subject, message=message)
             contact_message.save()
 
             return redirect('success_page')  # Redirect to success page
