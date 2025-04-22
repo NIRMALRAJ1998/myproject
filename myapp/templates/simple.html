@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Real Estate Website Landing Page</title>
+    <title>Blessings</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="{% static 'myapp/sample.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,9 +22,10 @@
         <header>
             <div class="flex container">
                 <a id="logo" href="#">
-                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 20px; vertical-align: middle; margin-right: 8px;">
-                    <span style="font-weight: bold; font-size: 20px; letter-spacing: 1px; color: #2c3e50; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
+                    <span style="font-weight: bold; font-size: 25px; letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
                 </a>
+                
                 <nav>
             
                     <button id="nav-toggle" class="hamburger-menu">
@@ -39,7 +40,6 @@
                         <li><a href="#agents">Agents</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <!-- <li><a href="{% url 'contact' %}">Contact</a></li> -->
                         <li><a href="#contact">Contact</a></li>
                         <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>
@@ -150,9 +150,12 @@
                     </div>
                 </div>
             </div>
-
-            <button class="rounded">View All Property Listings</button>
+            <a href="{% url 'properties' %}" style="text-decoration: none;">
+                <button class="rounded">View All Property Listings</button>
+            </a>
+            
         </div>
+        
     </section>
       
     <section id="agents" class="py-5">
@@ -212,7 +215,10 @@
                 <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
                 <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
               </ul>
-              <button class="rounded">Learn More</button>
+              <a href="{% url 'about' %}">
+                <button class="rounded">Learn More</button>
+            </a>
+            
             </div>
           </div>
         </div>
@@ -227,7 +233,7 @@
                     <div class="services-card-right">
                         <h3>Search Property</h3>
                         <p>Easily find properties that match your needs and preferences. Our advanced search tools let you filter by location, price, type, and more, making property hunting quick and efficient.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services'%}">Learn More</a>
                     </div>
                 </div>
 
@@ -236,7 +242,7 @@
                     <div class="services-card-right">
                         <h3>Buy Property</h3>
                         <p>Buying a property is a big decision. We guide you through the entire process, from viewing listings to finalizing the deal, ensuring you make an informed and confident purchase.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services'%}">Learn More</a>
                     </div>
                 </div>
 
@@ -245,7 +251,7 @@
                     <div class="services-card-right">
                         <h3>Investing</h3>
                         <p>Maximize your returns with smart real estate investments. Whether you're a first-time investor or experienced, we provide the insights and opportunities to grow your wealth through real estate.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services' %}">Learn More</a>
                     </div>
                 </div>
 
@@ -254,7 +260,7 @@
                     <div class="services-card-right">
                         <h3>List a Property</h3>
                         <p>Selling or renting your property? Our platform makes it easy to list your property and reach a wide audience of potential buyers or tenants, ensuring a quick and smooth transaction.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services'%}">Learn More</a>
                     </div>
                 </div>
 
@@ -263,7 +269,7 @@
                     <div class="services-card-right">
                         <h3>Property Locator</h3>
                         <p>Find the perfect property tailored to your needs with our Property Locator. Whether you're searching for a home, office, or investment opportunity, we make it easier than ever to discover the right place.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services'%}">Learn More</a>
                     </div>
                 </div>
 
@@ -272,7 +278,7 @@
                     <div class="services-card-right">
                         <h3>Stated Apps</h3>
                         <p>Access real estate solutions anytime, anywhere. Our mobile-friendly platform and apps offer seamless browsing, property management, and transaction tracking at your fingertips.</p>
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'services'%}">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -325,7 +331,7 @@
                     <h3>Contact Form</h3>
                     <form method="post" action="{% url 'contact' %}">  
                         {% csrf_token %}  
-                        {{ form.as_p }}  
+                        {{ form.as_p }} 
                         <!-- <label for="name">Name</label>
                         <input type="text" id="name" />
 

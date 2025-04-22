@@ -64,3 +64,23 @@ def contact(request):
 
 def success_page(request):
     return render(request, 'success.html') # Render success.html
+
+
+
+
+
+
+
+
+
+def about(request):
+    return render(request, 'about.html')
+
+
+
+def properties(request):
+    return render(request, 'properties.html')
+
+
+def services(request):
+    return render(request,'services.html')
