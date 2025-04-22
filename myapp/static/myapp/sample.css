@@ -360,6 +360,34 @@ header ul.is-sticky li a.active {
     font-weight: bold;
 }
 
+#agents {
+    width: 100vw;
+    padding: 80px 20px;
+    background-color: #fff; /* optional */
+    box-sizing: border-box;
+}
+
+.agents-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#agents h2 {
+    font-size: 3rem;
+    color: #f7931e;
+    margin-bottom: 20px;
+}
+
+#agents p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+
 #the-best {
     padding: 4rem 0;
   }
