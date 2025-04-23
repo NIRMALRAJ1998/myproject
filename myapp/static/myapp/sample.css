@@ -3,6 +3,7 @@
     scroll-behavior: smooth;
 } */
 
+
 body {
     font-family: "Roboto", "Helvetica", "Sans-serif";
     margin: 0;
@@ -1011,3 +1012,14 @@ footer small a:hover {
     width: 200px;
   }
 }
+
+
+.x-logo svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .x-logo:hover svg {
+    transform: scale(1.2);
+    fill: #000000; /* or white if on dark bg */
+  }
+  

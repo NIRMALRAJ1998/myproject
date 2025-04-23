@@ -27,7 +27,7 @@ def simple_view(request):
     else:
         # Initial request (GET request)
         form = ContactForm()  # Create an empty form instance
-    return render(request, 'simple.html', {'form': form})
+    return render(request, 'simple.html',{'form': form})
 
 
 
@@ -74,6 +74,7 @@ def success_page(request):
 
 
 
+<<<<<<< HEAD
 
 def about(request):
     return render(request, 'about.html')
@@ -86,3 +87,7 @@ def properties(request):
 
 def services(request):
     return render(request,'services.html')
+=======
+def about(request):
+     return render(request,'about.html')
+>>>>>>> c93b8d1 (ICON)

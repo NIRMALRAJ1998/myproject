@@ -14,7 +14,35 @@
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+   
+    <style>
+        .social-icons {
+          display: flex;
+          list-style: none;
+          gap: 20px;
+          padding: 0;
+          justify-content: center;
+        }
+      
+        .social-icons li a {
+          font-size: 28px;
+          color: inherit;
+          transition: transform 0.3s ease, color 0.3s ease;
+          text-decoration: none;
+        }
+      
+        .social-icons li a:hover {
+          transform: scale(1.2);
+        }
+      
+        .facebook    { color: #3b5998; }
+        .twitter     { color: #1da1f2; }
+        .instagram   { color: #e1306c; } /* Instagram brand pink */
+        .linkedin    { color: #0077b5; }
+        .youtube     { color: #ff0000; }
+      </style>
+      
+      
 </head>
 
 <body>
@@ -215,10 +243,17 @@
                 <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
                 <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
               </ul>
+<<<<<<< HEAD
               <a href="{% url 'about' %}">
                 <button class="rounded">Learn More</button>
             </a>
             
+=======
+              <a href="{about}" target="_blank">
+                <button class="rounded">Learn More</button>
+            </a>
+
+>>>>>>> c93b8d1 (ICON)
             </div>
           </div>
         </div>
@@ -354,23 +389,28 @@
                 </div>
 
                 <div id="address-container">
-                    <label>Address</label>
-                    <address>
-                        Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
-                    </address>
+                    <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
+                            <address>
+                          Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
+                            </address>
 
                     <label>Phone</label>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <a href="#">+91 9319552561</a>
 =======
                     <a href="tel:+919319552561">+91 9319552561 </a>
+=======
+                    <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
+>>>>>>> c93b8d1 (ICON)
 
 >>>>>>> 5838acc (Updated Number)
 
                     <label>Email Address</label>
                     <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
+                        <span class="fas fa-envelope" style="margin-right: 5px;"></span>
                         blessinggroupsofcompany@gmail.com
-                      </a>
+                    </a>
                       
 
                 </div>
@@ -405,20 +445,15 @@
                 <h5 class="follow-us">Follow Us</h5>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/">
-                          <span class="fab fa-facebook-f"></span>
-                        </a>
-                      </li>
-                      
-                    <li><a href="https://x.com/"><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="https://www.instagram.com/"><span class="fab fa-instagram"></span></a></li>
-                    <li><a href="https://www.linkedin.com/"><span class="fab fa-linkedin-in"></span></a></li>
-                    <li>
-                        <a href="https://www.youtube.com/" target="_blank">
-                          <span class="fab fa-youtube"></span>
-                        </a>
-                      </li>
-                </ul>
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://twitter.com/" class="twitter"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://www.instagram.com/" class="instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://www.linkedin.com/" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
+                            <li><a href="https://www.youtube.com/" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
+                          </ul>
+                          
+                          
             </div>
         </div>
 
