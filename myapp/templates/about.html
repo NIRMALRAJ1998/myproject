@@ -1,5 +1,204 @@
-<<<<<<< HEAD
-<h1>simbu</h1>
-=======
-<h2>hello</h2>
->>>>>>> c93b8d1 (ICON)
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blessings</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{% static 'myapp/sample.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     
+
+    <style>
+
+        .social-icons {
+          display: flex;
+          list-style: none;
+          gap: 20px;
+          padding: 0;
+          justify-content: center;
+        }
+      
+        .social-icons li a {
+          font-size: 28px;
+          color: inherit;
+          transition: transform 0.3s ease, color 0.3s ease;
+          text-decoration: none;
+        }
+      
+        .social-icons li a:hover {
+          transform: scale(1.2);
+        }
+      
+        .facebook    { color: #3b5998; }
+        .twitter     { color: #1da1f2; }
+        .instagram   { color: #e1306c; } /* Instagram brand pink */
+        .linkedin    { color: #0077b5; }
+        .youtube     { color: #ff0000; }
+      </style>
+      
+
+
+</head>
+
+<body>
+    <div id="header-hero-container">
+        <header>
+            <div class="flex container">
+                <a id="logo" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
+                    <span style="font-weight: bold; font-size: 25px; letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                </a>
+                
+                <nav>
+            
+                    <button id="nav-toggle" class="hamburger-menu">
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                    </button>
+
+                    <ul id="nav-menu">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#agents">Agents</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li id="close-flyout"><span class="fas fa-times"></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="hero">
+            <div class="fade"></div>
+            <div class="hero-text">
+                <h1>Buy And Sell Real Estate Properties</h1>
+                <p>Connecting people to places with purpose. We blend innovation and insight to make real estate simple, smart, and successful.</p>
+            </div>
+        </section>
+    </div>
+
+    
+      
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+          <div class="about-flex">
+            <div class="about-image">
+              <img src="{% static 'images/about1.avif' %}" alt="Property 1" />
+            </div>
+            <div class="about-content">
+              <h2>We Are the Best Real Estate Company</h2>
+              <p class="large-paragraph">
+                Our company was Founded in <strong>2014</strong> with the vision of delivering exceptional value to our customers. Over the years, we have grown into a trusted name, dedicated to innovation and excellence.
+              </p>
+              <p>
+                Our team’s dedication and deep understanding of the market ensure you make the best decisions for your property needs. Whether buying, selling, or investing, we are your trusted partner in real estate.
+              </p>
+              <ul>
+                <li>Our team of experienced professionals offers top-notch advice to help you make the right real estate decisions.</li>
+                <li>We tailor our approach to meet your unique needs, ensuring a seamless and stress-free experience.</li>
+                <li>With deep insights into the local and global real estate market, we bring you the best opportunities for buying, selling, and investing.</li>
+                <li>Your satisfaction is our priority. We go above and beyond to ensure your needs are met and your goals are achieved.</li>
+                <li>Our track record speaks for itself. We have successfully helped hundreds of clients find their dream properties and make profitable investments.</li>
+                <li>We have strong connections with property developers, legal advisors, and financial institutions to provide you with a complete real estate solution.</li>
+                <li>We believe in complete transparency in all our dealings, ensuring that our clients are always well-informed and confident.</li>
+                <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
+                <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
+              </ul>
+              </a>
+
+            </div>
+          </div>
+        </div>
+    </section>
+      
+
+       <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <body>
+                <div class="center-wrapper">
+                    <div id="address-container">
+                        <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
+                        <address>
+                            Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
+                        </address>
+            
+                        <label>Phone</label>
+                        <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
+            
+                        <label>Email Address</label>
+                        <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
+                            <span class="fas fa-envelope" style="margin-right: 5px;"></span>
+                            blessinggroupsofcompany@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </body>
+            
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex container">
+            <div class="footer-about">
+                <h5>About</h5>
+                <p>We are a modern real estate platform built to simplify property buying, selling, and investing. With a focus on technology, trust, and transparency — Stated connects people to their perfect properties with ease and confidence.</p>
+            </div>
+
+            <div class="footer-quick-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-subscribe">
+                <h5>Subscribe to our Newsletter</h5>
+                <div id="subscribe-container">
+                    <input type="text" placeholder="Enter Email" />
+                    <button class="right-rounded">Send</button>
+                </div>
+
+                <h5 class="follow-us">Follow Us</h5>
+                <ul>
+                    <li>
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://twitter.com/" class="twitter"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://www.instagram.com/" class="instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://www.linkedin.com/" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
+                            <li><a href="https://www.youtube.com/" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
+                          </ul>
+                          
+                          
+            </div>
+        </div>
+
+        <small>
+            2025 All rights reserved | This template is made with  by evolve solutions
+            <p>&copy; 2025 All rights reserved.</p>
+
+        </small>
+    </footer>
+
+    <script src="{% static 'myapp/script.js' %}"></script>
+</body>
+
+</body>
+</html>

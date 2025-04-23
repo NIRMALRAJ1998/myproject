@@ -74,10 +74,9 @@ def success_page(request):
 
 
 
-<<<<<<< HEAD
 
-def about(request):
-    return render(request, 'about.html')
+# def about(request):
+#     return render(request, 'about.html')
 
 
 
@@ -87,7 +86,5 @@ def properties(request):
 
 def services(request):
     return render(request,'services.html')
-=======
 def about(request):
      return render(request,'about.html')
->>>>>>> c93b8d1 (ICON)
