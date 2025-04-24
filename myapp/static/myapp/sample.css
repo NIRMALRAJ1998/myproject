@@ -12,6 +12,7 @@ body {
     font-weight: 400;
     color: #777;
     line-height: 1.7;
+    scroll-padding-top: 18px;
 }
 
 * {
@@ -94,7 +95,7 @@ p.large-paragraph {
 
 /* start: header styles */
 #header-hero-container {
-    min-height: 600px;
+    min-height: 500px;
     height: calc(100vh);
     position: relative;
 }
@@ -790,7 +791,7 @@ footer small a:hover {
         margin: 0;
         padding: 2rem;
         height: 100%;
-        width: 300px;
+        width: 350;
         box-sizing: border-box;
         box-shadow: 5px 0 10px 3px #999;
     }
@@ -809,7 +810,7 @@ footer small a:hover {
 
     nav ul li {
         display: block;
-        margin: 20px 0;
+        margin: 15px;
     }
 
     nav ul li:first-child {
@@ -872,7 +873,7 @@ footer small a:hover {
     }
 
     #properties .container:before {
-        top: 2px;
+        top: 1px;
         font-size: 0.85rem;
     }
 
@@ -1029,3 +1030,41 @@ footer small a:hover {
   }
   
   
+  .social-icons {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    justify-content: center;
+}
+
+.social-icons li a {
+    font-size: 28px;
+    color: inherit;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons li a:hover {
+    transform: scale(1.2);
+}
+
+.facebook     { color: #3b5998; }
+.twitter      { color: #1da1f2; }
+.instagram    { color: #e1306c; } /* Instagram brand pink */
+.linkedin     { color: #0077b5; }
+.youtube      { color: #ff0000; }
+
+/* New styles to center the About title and address container */
+#about .container h1 {
+    text-align: center;
+}
+
+#contact .container .center-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#contact .container #address-container {
+    text-align: center; /* Center the text within the address container */
+}

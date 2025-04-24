@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,36 +13,61 @@
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     
+
 
     <style>
 
         .social-icons {
-          display: flex;
-          list-style: none;
-          gap: 20px;
-          padding: 0;
-          justify-content: center;
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            justify-content: center;
         }
-      
+
         .social-icons li a {
-          font-size: 28px;
-          color: inherit;
-          transition: transform 0.3s ease, color 0.3s ease;
-          text-decoration: none;
+            font-size: 28px;
+            color: inherit;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
         }
-      
+
         .social-icons li a:hover {
-          transform: scale(1.2);
+            transform: scale(1.2);
         }
-      
-        .facebook    { color: #3b5998; }
-        .twitter     { color: #1da1f2; }
-        .instagram   { color: #e1306c; } /* Instagram brand pink */
-        .linkedin    { color: #0077b5; }
-        .youtube     { color: #ff0000; }
-      </style>
-      
+
+        .facebook     { color: #3b5998; }
+        .twitter      { color: #1da1f2; }
+        .instagram    { color: #e1306c; } /* Instagram brand pink */
+        .linkedin     { color: #0077b5; }
+        .youtube      { color: #ff0000; }
+
+        /* New styles to center the About title and address container */
+        #about .container h1 {
+            text-align: center;
+        }
+
+        #contact .container .center-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        #contact .container #address-container {
+            text-align: center; /* Center the text within the address container */
+        }
+
+        .map-container {
+      display: flex;
+      justify-content: center; /* Horizontally center */
+      align-items: center;     /* Vertically center (optional) */
+      height: 50svh;           /* Full screen height */
+    }
+    iframe {
+      border: 0;
+      width: 3000px;
+      height: 400px;
+    }
+    </style>
 
 
 </head>
@@ -56,9 +80,9 @@
                     <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
                     <span style="font-weight: bold; font-size: 25px; letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
                 </a>
-                
+
                 <nav>
-            
+
                     <button id="nav-toggle" class="hamburger-menu">
                         <span class="strip"></span>
                         <span class="strip"></span>
@@ -77,22 +101,12 @@
                 </nav>
             </div>
         </header>
-
-        <section id="hero">
-            <div class="fade"></div>
-            <div class="hero-text">
-                <h1>Buy And Sell Real Estate Properties</h1>
-                <p>Connecting people to places with purpose. We blend innovation and insight to make real estate simple, smart, and successful.</p>
-            </div>
-        </section>
     </div>
 
-    
-      
     <section id="about">
         <div class="container">
-            <h2>About</h2>
-          <div class="about-flex">
+            <h1>About</h1>
+        <div class="about-flex">
             <div class="about-image">
               <img src="{% static 'images/about1.avif' %}" alt="Property 1" />
             </div>
@@ -115,29 +129,33 @@
                 <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
                 <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
               </ul>
-              </a>
+
 
             </div>
-          </div>
+        </div>
         </div>
     </section>
-      
 
-       <section id="contact">
+        <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
 
-            <body>
+        
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745486815657!5m2!1sen!2sin" 
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
                 <div class="center-wrapper">
                     <div id="address-container">
                         <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
                         <address>
                             Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
                         </address>
-            
+
                         <label>Phone</label>
                         <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
-            
+
                         <label>Email Address</label>
                         <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
                             <span class="fas fa-envelope" style="margin-right: 5px;"></span>
@@ -145,8 +163,7 @@
                         </a>
                     </div>
                 </div>
-            </body>
-            
+
             </div>
         </div>
     </section>
@@ -184,15 +201,16 @@
                             <li><a href="https://www.instagram.com/" class="instagram"><span class="fab fa-instagram"></span></a></li>
                             <li><a href="https://www.linkedin.com/" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
                             <li><a href="https://www.youtube.com/" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
-                          </ul>
-                          
-                          
+                        </ul>
+
+
+                </div>
             </div>
         </div>
 
         <small>
-            2025 All rights reserved | This template is made with  by evolve solutions
-            <p>&copy; 2025 All rights reserved.</p>
+            2025 All rights reserved | This template is made with   by evolve solutions
+            <p>© 2025 All rights reserved.</p>
 
         </small>
     </footer>
