@@ -91,3 +91,6 @@ def about(request):
 
 def agent(request):
     return render(request,'agent.html')
+
+def career(request):
+    return render(request,'career.html')

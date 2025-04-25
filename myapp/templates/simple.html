@@ -183,7 +183,8 @@ html {
 
                 <a id="logo" href="#">
                     <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" class="logo-img">
-                    <span class="logo-text">BLESSING PROPERTIES</span>
+                    <span class="logo-text">
+                        <strong>BLESSING PROPERTIES</strong></span>
                 </a>
                 
                 
@@ -201,6 +202,7 @@ html {
                         <li><a href="#agents">Agents</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="{% url 'career'%}">Career</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>

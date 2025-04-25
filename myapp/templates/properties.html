@@ -15,59 +15,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
        
-    <style>
-        .social-icons {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            padding: 0;
-            justify-content: center;
-        }
-
-        .social-icons li a {
-            font-size: 28px;
-            color: inherit;
-            transition: transform 0.3s ease, color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icons li a:hover {
-            transform: scale(1.2);
-        }
-
-        .facebook     { color: #3b5998; }
-        .twitter      { color: #1da1f2; }
-        .instagram    { color: #e1306c; } /* Instagram brand pink */
-        .linkedin     { color: #0077b5; }
-        .youtube      { color: #ff0000; }
-
-       /* New styles to center the Properties title and container */
-#properties .container h1 {
-    text-align: center;
-}
-
-#properties .container .center-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-#properties .container #properties-list {
-    text-align: center; /* Center the content within the properties container */
-}
-         
-
-.map-container {
-      display: flex;
-      justify-content: center; /* Horizontally center */
-      align-items: center;     /* Vertically center (optional) */
-      height: 50svh;           /* Full screen height */
-    }
-    iframe {
-      border: 0;
-      width: 3000px;
-      height: 400px;
-    }
-      </style>
       
       
 </head>
@@ -84,17 +31,18 @@
                 <nav>
             
                     <button id="nav-toggle" class="hamburger-menu">
-                        <!-- <span class="strip"></span>
+                         <span class="strip"></span>
                         <span class="strip"></span>
-                        <span class="strip"></span> -->
+                        <span class="strip"></span> 
                     </button>
 
                     <ul id="nav-menu">
                         <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
-                        <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>
-                        <li><a href="{% url 'simple_view' %}#agents">agents</a></li> 
-                        <li><a href="{% url 'simple_view' %}#about">about</a></li> 
-                        <li><a href="{% url 'simple_view' %}#services">services</a></li> 
+                        <li><a href="{% url 'agent' %}">Agents</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>  
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'career' %}">Career</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>   
                         <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>
                 </nav>
@@ -106,7 +54,7 @@
     
       <section id="properties">
         <div class="container">
-            <h1>PROPERTIES</h1>
+            <h1><strong>PROPERTIES</strong></h1>
             <div id="properties-slider" class="slick">
                 <div>
                     <img src="{% static 'images/house1.jpeg' %}" alt="Property 1" />
@@ -186,10 +134,9 @@
 
            
             <body>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745486815657!5m2!1sen!2sin" 
-                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745581856506!5m2!1sen!2sin"
+                 width="1500" height="300" style="border: 1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
                 
                 <div class="center-wrapper">
                     <div id="address-container">

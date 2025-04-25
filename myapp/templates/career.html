@@ -1,1 +1,52 @@
-<h1>career page</h1>
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blessings</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{% static 'myapp/properties.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+       
+      
+      
+</head>
+
+<body>
+    <div id="header-hero-container">
+        <header>
+            <div class="flex container">
+                <a id="logo" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
+                    <span style="font-weight: bold; font: size 35px;letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                </a>
+                
+                <nav>
+            
+                    <button id="nav-toggle" class="hamburger-menu">
+                         <span class="strip"></span>
+                        <span class="strip"></span>
+                        <span class="strip"></span> 
+                    </button>
+
+                    <ul id="nav-menu">
+                        <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'simple_view' %}#properties">Properties</a></li>
+                        <li><a href="{% url 'simple_view' %}#services">Services</a></li>
+                        <li><a href="{% url 'simple_view' %}#agents">Agents</a></li>
+                        <li><a href="{% url 'simple_view' %}#about">About</a></li>  
+                        <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>
+                        <li id="close-flyout"><span class="fas fa-times"></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    </div>
