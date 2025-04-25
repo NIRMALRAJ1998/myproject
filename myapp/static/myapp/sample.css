@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap');
-/* html{
+html{
     scroll-behavior: smooth;
-} */
+}
 
 
 body {
@@ -211,9 +211,7 @@ header ul.is-sticky li a.active {
     font-weight: 300;
     font-size: 1rem;
 }
-/* end: hero section styles */
 
-/* start: how it works styles */
 #how-it-works {
     padding: 3rem 0;
     background: #f8f9fa;
@@ -241,14 +239,18 @@ header ul.is-sticky li a.active {
 #properties {
     margin: 4rem 0 8rem;
     position: relative;
+    scroll-margin: 170px;
 }
 
 #properties h2 {
     margin-bottom: 3rem;
+    /* position: relative;
+    scroll-margin: 170px; */
 }
 
 #properties .container {
     position: relative;
+    scroll-margin: 170px;
 }
 
 #properties .container:before {
@@ -327,7 +329,8 @@ header ul.is-sticky li a.active {
 #agents {
     margin: 4rem 0 6rem;
     padding: 0 0 6rem;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    
 }
 
 #agents p.large-paragraph {
@@ -369,10 +372,15 @@ header ul.is-sticky li a.active {
     padding: 80px 20px;
     background-color: #fff; /* optional */
     box-sizing: border-box;
+    margin: 4rem 0 8rem;
+    position: relative;
+    scroll-margin-top: 100px; /* Adjust this value based on your navbar height */
+    
+    
 }
 
 .agents-wrapper {
-    max-width: 1200px;
+    max-width: 1px;
     margin: 0 auto;
     text-align: center;
 }
@@ -382,6 +390,8 @@ header ul.is-sticky li a.active {
     color: #f7931e;
     margin-bottom: 20px;
 }
+
+
 
 #agents p {
     font-size: 1.2rem;
@@ -403,6 +413,14 @@ header ul.is-sticky li a.active {
     text-align: center;
   }
   
+  #about {
+    margin: 4rem 0 8rem;
+    position: relative;
+    scroll-margin-top: 100px; /* Adjust if navbar height is different */
+    background-color: #ffffff;
+    padding: 3rem 0;
+    border-radius: 12px;
+}
   .about-flex {
     display: flex;
     flex-wrap: wrap;
@@ -463,6 +481,9 @@ header ul.is-sticky li a.active {
     padding: 6rem 0;
     margin: 8rem 0;
     border-bottom: 1px solid #dee2e6;
+    margin: 4rem 0 8rem;
+    position: relative;
+    scroll-margin-top: 100px;
 }
 
 #services h2 {
@@ -556,6 +577,9 @@ header ul.is-sticky li a.active {
 #contact {
     background: #f8f9fa;
     padding: 4rem 0 8rem;
+    margin: 4rem 0 8rem;
+    position: relative;
+    scroll-margin-top: 100px;
 }
 
 #contact h2 {

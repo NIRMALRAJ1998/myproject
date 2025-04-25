@@ -14,8 +14,113 @@
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    
        
     <style>
+/* Header container */
+.flex.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  /* background-color: #fff; */
+  color: #777;
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+}
+
+/* Logo section */
+#logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+#logo img {
+  height: 70px;
+  margin-right: 10px;
+}
+
+#logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  letter-spacing: 1px;
+}
+
+/* Nav menu desktop */
+#nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-menu li a {
+  text-decoration: none;
+  /* color: #333; */
+  color: orange;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+#nav-menu li a:hover,
+#nav-menu li a.active {
+  color: orange;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger-menu .strip {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #nav-menu {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+
+
+html {
+        scroll-behavior: smooth;
+    }
+    
         .social-icons {
             display: flex;
             list-style: none;
@@ -48,11 +153,11 @@
 
         #contact .container .center-wrapper {
             display: flex;
-            justify-content: center;
+            justify-content: left;
         }
 
         #contact .container #address-container {
-            text-align: center; /* Center the text within the address container */
+            text-align: left; /* Center the text within the address container */
         }
 
         .map-container {
@@ -71,21 +176,27 @@
     <div id="header-hero-container">
         <header>
             <div class="flex container">
-                <a id="logo" href="#">
+                <!-- <a id="logo" href="#">
                     <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
                     <span style="font-weight: bold; font: size 35px;letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                </a> -->
+
+                <a id="logo" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" class="logo-img">
+                    <span class="logo-text">BLESSING PROPERTIES</span>
                 </a>
+                
                 
                 <nav>
             
                     <button id="nav-toggle" class="hamburger-menu">
-                        <!-- <span class="strip"></span>
                         <span class="strip"></span>
-                        <span class="strip"></span> -->
+                        <span class="strip"></span>
+                        <span class="strip"></span>
                     </button>
 
                     <ul id="nav-menu">
-                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#" class="active">Home</a></li>
                         <li><a href="#properties">Properties</a></li>
                         <li><a href="#agents">Agents</a></li>
                         <li><a href="#about">About</a></li>
@@ -476,6 +587,15 @@
 
         </small>
     </footer>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+      
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+        });
+      </script>
+      
 
     <script src="{% static 'myapp/script.js' %}"></script>
 </body>

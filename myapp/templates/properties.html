@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blessings</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="{% static 'myapp/sample.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/properties.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -90,12 +90,11 @@
                     </button>
 
                     <ul id="nav-menu">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#properties">Properties</a></li>
-                        <li><a href="#agents">Agents</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>
+                        <li><a href="{% url 'simple_view' %}#agents">agents</a></li> 
+                        <li><a href="{% url 'simple_view' %}#about">about</a></li> 
+                        <li><a href="{% url 'simple_view' %}#services">services</a></li> 
                         <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>
                 </nav>
@@ -105,7 +104,7 @@
     </div>
 
     
-    <section id="properties">
+    <!-- <section id="properties">
         <div class="container">
             <h1>PROPERTIES</h1>
             <div id="properties-slider" class="slick">
@@ -262,7 +261,7 @@
         </small>
     </footer>
 
-    <script src="{% static 'myapp/script.js' %}"></script>
+    <script src="{% static 'myapp/script.js' %}"></script> -->
 </body>
 </body>
 </html>
