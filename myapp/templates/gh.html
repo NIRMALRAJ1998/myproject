@@ -1,28 +1,605 @@
-<!-- <section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
+{% load static %}
 
-        <div class="flex">
-            <div id="form-container">
-                <h3>Contact Form</h3>
-                <form method="post" action="{% url 'contact' %}">  
-                    {% csrf_token %}  
-                    {{ form.as_p }}  
-                    <button class="rounded" type="submit">SMessage</button> 
-                </form>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blessings</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{% static 'myapp/sample.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    
+       
+    <style>
+/* Header container */
+.flex.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  /* background-color: #fff; */
+  color: #777;
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+}
+
+/* Logo section */
+#logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+#logo img {
+  height: 70px;
+  margin-right: 10px;
+}
+
+#logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  letter-spacing: 1px;
+}
+
+/* Nav menu desktop */
+#nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-menu li a {
+  text-decoration: none;
+  /* color: #333; */
+  color: orange;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+#nav-menu li a:hover,
+#nav-menu li a.active {
+  color: orange;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger-menu .strip {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #nav-menu {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+}
+
+
+
+html {
+        scroll-behavior: smooth;
+    }
+    
+        .social-icons {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .social-icons li a {
+            font-size: 28px;
+            color: inherit;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons li a:hover {
+            transform: scale(1.2);
+        }
+
+        .facebook     { color: #3b5998; }
+        .twitter      { color: #1da1f2; }
+        .instagram    { color: #e1306c; } /* Instagram brand pink */
+        .linkedin     { color: #0077b5; }
+        .youtube      { color: #ff0000; }
+
+        /* New styles to center the About title and address container */
+        #about .container h1 {
+            text-align: center;
+        }
+
+        #contact .container .center-wrapper {
+            display: flex;
+            justify-content: left;
+        }
+
+        #contact .container #address-container {
+            text-align: left; /* Center the text within the address container */
+        }
+
+        .map-container {
+      display: flex;
+      justify-content: center; /* Horizontally center */
+      align-items: center;     /* Vertically center (optional) */
+      height: 50svh;           /* Full screen height */
+    }
+         
+      </style>
+      
+      
+</head>
+
+<body>
+    <div id="header-hero-container">
+        <header>
+            <div class="flex container">
+                <!-- <a id="logo" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
+                    <span style="font-weight: bold; font: size 35px;letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                </a> -->
+
+                <a id="logo" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" class="logo-img">
+                    <span class="logo-text">
+                        <strong>BLESSING PROPERTIES</strong></span>
+                </a>
+                
+                
+                <nav>
+            
+                    <button id="nav-toggle" class="hamburger-menu">
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                    </button>
+
+                    <ul id="nav-menu">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="{% url 'properties'%}">Properties</a></li>
+                        <li><a href="{% url 'agent'%}">Agents</a></li>
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li><a href="{% url 'services'%}">Services</a></li>
+                        <li><a href="{% url 'career'%}">Career</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li id="close-flyout"><span class="fas fa-times"></span></li>
+                    </ul>
+                </nav>
             </div>
+        </header>
 
-            <div id="address-container">
-                <label>Address</label>
-                <address>
-                    20377 Evergreen Terrace Mountain View, California, USA
-                </address>
+        <section id="hero">
+            <div class="fade"></div>
+            <div class="hero-text">
+                <h1>Buy And Sell Real Estate Properties</h1>
+                <p>Connecting people to places with purpose. We blend innovation and insight to make real estate simple, smart, and successful.</p>
+            </div>
+        </section>
+    </div>
 
-                <label>Phone</label>
-                <a href="#">232-232-2323</a>
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="flex">
+                <div>
+                    <span class="fas fa-home"></span>
+                    <h4>Find a Property.</h4>
+                    <p>Discover homes that match your lifestyle. Whether it’s a cozy apartment or a spacious villa, we help you find the perfect fit with ease and speed.</p>
+                </div>
 
-                <label>Email Address</label>
-                <a href="#">ouremail@domain.com</a>
+                <div>
+                    <span class="fas fa-dollar-sign"></span>
+                    <h4>Buy a Property.</h4>
+                    <p>From site visits to closing deals, we make your home-buying journey smooth and transparent. Get expert guidance and the best market value, all in one place.</p>
+                </div>
+
+                <div>
+                    <span class="fas fa-chart-line"></span>
+                    <h4>Investing.</h4>
+                    <p>Build your future with smart real estate investments. We offer insights, trends, and top property picks to help you grow your wealth with confidence.</p>
+                </div>
             </div>
         </div>
-    </div> -->
+    </section>
+
+    <section id="properties">
+        <div class="container">
+            <h2>Properties</h2>
+            <div id="properties-slider" class="slick">
+                <div>
+                    <img src="{% static 'images/house1.jpeg' %}" alt="Property 1" />
+                    <div class="property-details">
+                        <p class="price">₹3,400,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            No. 480, 12th street, Alandhur, Chennai, 600028
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="{% static 'images/house2.jpeg' %}" alt="Test Image" />
+                    <div class="property-details">
+                        <p class="price">₹34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            No. 480, 12th street, Alandhur, Chennai, 600028
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="{% static 'images/house3.jpeg' %}" alt="Property 1" />
+                    <div class="property-details">
+                        <p class="price">₹34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            No. 480, 12th street, Alandhur, Chennai, 600028
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="{% static 'images/house4.jpeg' %}" alt="Property 1" />
+                    <div class="property-details">
+                        <p class="price">₹34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            No. 480, 12th street, Alandhur, Chennai, 600028
+                        </address>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="{% static 'images/house5.jpeg' %}" alt="Property 1" />
+                    <div class="property-details">
+                        <p class="price">₹34,00,000</p>
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+                        <address>
+                            No. 480, 12th street, Alandhur, Chennai, 600028
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'properties' %}" style="text-decoration: none;">
+                <button class="rounded">View All Property Listings</button>
+            </a>
+            
+        </div>
+        
+    </section>
+      
+    <section id="agents" class="py-5">
+        <div class="container">
+            <h2>Agents</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <ul style="list-style-type: disc; padding-left: 20px;">
+              <!-- <h2 class="section-title" style="color: #f7931e;">Agents</h2>-->
+              <li class="section-subtitle">
+                Our experienced agents are here to provide expert advice and personalized service.
+                With deep market knowledge and a commitment to your goals, we ensure you make informed decisions every step of the way.
+              </li>
+              <li class="section-subtitle">
+                Whether you're buying your first home, investing in real estate, or selling a beloved property, our agents are with you every step.
+                We believe in building relationships based on trust, transparency, and results.
+              </li>
+              <li class="section-subtitle">
+                Each of our agents brings a unique perspective and specialized expertise, from luxury homes to commercial spaces.
+                Let us help you find the perfect fit — because your journey deserves nothing less than the best.
+              </li>
+              <li class="section-subtitle">
+                Our agents have in-depth knowledge of local neighborhoods, property trends, and market conditions. This means you get real insights that help you find the right property at the right price — or sell for top value.
+              </li>
+              <li class="section-subtitle">
+                From the first consultation to closing the deal, our team provides seamless assistance with paperwork, legal guidance, financing advice, and more. We’re here to make the process smooth and stress-free.
+              </li>
+            </ul>
+            <a href="{% url 'agent' %}">
+                <button class="rounded">Learn More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+          <div class="about-flex">
+            <div class="about-image">
+              <img src="{% static 'images/about1.avif' %}" alt="Property 1" />
+            </div>
+            <div class="about-content">
+              <h2>We Are the Best Real Estate Company</h2>
+              <p class="large-paragraph">
+                Our company was Founded in <strong>2014</strong> with the vision of delivering exceptional value to our customers. Over the years, we have grown into a trusted name, dedicated to innovation and excellence.
+              </p>
+              <p>
+                Our team’s dedication and deep understanding of the market ensure you make the best decisions for your property needs. Whether buying, selling, or investing, we are your trusted partner in real estate.
+              </p>
+              <ul>
+                <li>Our team of experienced professionals offers top-notch advice to help you make the right real estate decisions.</li>
+                <li>We tailor our approach to meet your unique needs, ensuring a seamless and stress-free experience.</li>
+                <li>With deep insights into the local and global real estate market, we bring you the best opportunities for buying, selling, and investing.</li>
+                <li>Your satisfaction is our priority. We go above and beyond to ensure your needs are met and your goals are achieved.</li>
+                <li>Our track record speaks for itself. We have successfully helped hundreds of clients find their dream properties and make profitable investments.</li>
+                <li>We have strong connections with property developers, legal advisors, and financial institutions to provide you with a complete real estate solution.</li>
+                <li>We believe in complete transparency in all our dealings, ensuring that our clients are always well-informed and confident.</li>
+                <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
+                <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
+              </ul>
+              <a href="{% url 'about' %}">
+                <button class="rounded">Learn More</button>
+              </a>
+
+            </div>
+          </div>
+        </div>
+    </section>
+      
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="flex">
+                <div>
+                    <div class="fas fa-home"></div>
+                    <div class="services-card-right">
+                        <h3>Search Property</h3>
+                        <p>Easily find properties that match your needs and preferences. Our advanced search tools let you filter by location, price, type, and more, making property hunting quick and efficient.</p>
+                        <a href="{% url 'services'%}">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fas fa-dollar-sign"></div>
+                    <div class="services-card-right">
+                        <h3>Buy Property</h3>
+                        <p>Buying a property is a big decision. We guide you through the entire process, from viewing listings to finalizing the deal, ensuring you make an informed and confident purchase.</p>
+                        <a href="{% url 'services'%}">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fas fa-chart-line"></div>
+                    <div class="services-card-right">
+                        <h3>Investing</h3>
+                        <p>Maximize your returns with smart real estate investments. Whether you're a first-time investor or experienced, we provide the insights and opportunities to grow your wealth through real estate.</p>
+                        <a href="{% url 'services' %}">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fas fa-building"></div>
+                    <div class="services-card-right">
+                        <h3>List a Property</h3>
+                        <p>Selling or renting your property? Our platform makes it easy to list your property and reach a wide audience of potential buyers or tenants, ensuring a quick and smooth transaction.</p>
+                        <a href="{% url 'services'%}">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fas fa-search"></div>
+                    <div class="services-card-right">
+                        <h3>Property Locator</h3>
+                        <p>Find the perfect property tailored to your needs with our Property Locator. Whether you're searching for a home, office, or investment opportunity, we make it easier than ever to discover the right place.</p>
+                        <a href="{% url 'services'%}">Learn More</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="fas fa-mobile-alt"></div>
+                    <div class="services-card-right">
+                        <h3>Stated Apps</h3>
+                        <p>Access real estate solutions anytime, anywhere. Our mobile-friendly platform and apps offer seamless browsing, property management, and transaction tracking at your fingertips.</p>
+                        <a href="{% url 'services'%}">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Are Saying</h2>
+            <div id="testimonials-slider">
+                <div>
+                    <blockquote>
+                        <p>"I couldn’t be more satisfied with my experience. The team guided me every step of the way, and I found my dream home with ease. Their professionalism and dedication are unmatched!"</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <!--<img src="{% static 'images/Customer3.png' %}" alt="Client 7" />-->
+                        <p>Mahi Bharathi</p>
+                    </div>
+                </div>
+
+                <div>
+                    <blockquote>
+                        <p>"As a first-time investor, I was a bit overwhelmed, but the experts at Blessings properties made the process so simple. They helped me make smart investment decisions, and I’m already seeing great returns!"</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <!-- <img src="{% static 'images/customer4.png' %}" alt="Client 7" /> -->
+                        <p>Bharath kumar</p>
+                    </div>
+                </div>
+
+                <div>
+                    <blockquote>
+                        <p>"Selling my property was a breeze with this team. They understood my needs, got me the best offer, and handled all the paperwork. Highly recommended for anyone looking to buy or sell."</p>
+                    </blockquote>
+                    <div class="testimonials-caption">
+                        <!-- <img src="{% static 'images/customer5.png' %}" alt="Client 7" /> -->
+                        <p>Saravanan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <div class="flex">
+                <div id="form-container">
+                    <h2>Contact Form</h2>
+                    <form method="post" action="{% url 'contact' %}">  
+                        {% csrf_token %}  
+                        {{ form.as_p }} 
+                        <!-- <label for="name">Name</label>
+                        <input type="text" id="name" />
+
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone">
+
+                        <label for="email">Email</label>
+                        <input type="text" id="email" />
+
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" />
+
+                        <label for="message">Message</label> 
+                         <label for="phone">Phone</label>
+                        <input type="text" id="phone">
+                        <textarea id="message">Write your message here..</textarea> -->
+
+                        <button class="rounded" type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div id="address-container">
+                    <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
+                            <address>
+                          Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
+                            </address>
+
+                    <label>Phone</label>
+                    <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
+
+                    <label>Email Address</label>
+                    <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
+                        <span class="fas fa-envelope" style="margin-right: 5px;"></span>
+                        blessinggroupsofcompany@gmail.com
+                    </a>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745486815657!5m2!1sen!2sin" 
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+               
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex container">
+            <div class="footer-about">
+                <h5>About</h5>
+                <p>We are a modern real estate platform built to simplify property buying, selling, and investing. With a focus on technology, trust, and transparency — Stated connects people to their perfect properties with ease and confidence.</p>
+            </div>
+
+            <div class="footer-quick-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-subscribe">
+                <h5>Subscribe to our Newsletter</h5>
+                <div id="subscribe-container">
+                    <input type="text" placeholder="Enter Email" />
+                    <button class="right-rounded">Send</button>
+                </div>
+
+                <h5 class="follow-us">Follow Us</h5>
+                <ul>
+                    <li>
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/profile.php?id=61575398468365" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://twitter.com/BlessingPr83618" class="twitter"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://www.instagram.com/blessingproperties61" class="instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/blessing-properties-238003362" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCuvVecxXj-2SgEsTgCNaWiA" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
+                          </ul>
+
+            </div>
+        </div>
+
+        <small>
+            2025 All rights reserved | This template is made with  by evolve solutions
+            <p>&copy; 2025 All rights reserved.</p>
+
+        </small>
+    </footer>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+      
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+        });
+      </script>
+      
+
+    <script src="{% static 'myapp/script.js' %}"></script>
+</body>
+</body>
+</html>
