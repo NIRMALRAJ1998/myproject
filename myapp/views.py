@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .careerforms import CareerApplicationForm
+
 # Create your views here.
 from django.http import HttpResponse
 
@@ -92,5 +94,12 @@ def about(request):
 def agent(request):
     return render(request,'agent.html')
 
-def career(request):
-    return render(request,'career.html')
+def career_application_view(request):
+    if request.method == 'POST':
+        form = CareerApplicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('career_success')
+    else:
+        form = CareerApplicationForm()
+    return render(request, 'career.html', {'form': form})

@@ -374,7 +374,7 @@ header ul.is-sticky li a.active {
     box-sizing: border-box;
     margin: 4rem 0 8rem;
     position: relative;
-    scroll-margin-top: 100px; /* Adjust this value based on your navbar height */
+    scroll-margin-top: 100px;
     
     
 }

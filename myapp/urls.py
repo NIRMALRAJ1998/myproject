@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('/about',views.about,name='about'),
     path('agent',views.agent,name='agent'),
-    path('career',views.career,name='career')
+    path('career',views.career_application_view,name='career'),
+    path('career/success/', views.success_page, name='career_success')
 
 ]

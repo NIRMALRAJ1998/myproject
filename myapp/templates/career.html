@@ -1,6 +1,4 @@
-{% load static %}
-
-
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blessings</title>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="{% static 'myapp/properties.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/career1.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-       
-      
-      
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    
+   
 </head>
 
 <body>
@@ -25,16 +25,12 @@
             <div class="flex container">
                 <a id="logo" href="#">
                     <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
-                    <span style="font-weight: bold; font: size 35px;letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                    <span style="font-weight: bold; font-size: 35px; letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
                 </a>
                 
                 <nav>
-            
-                    <button id="nav-toggle" class="hamburger-menu">
-                         <span class="strip"></span>
-                        <span class="strip"></span>
-                        <span class="strip"></span> 
-                    </button>
+                    
+                    <div id="hamburger">&#9776;</div>
 
                     <ul id="nav-menu">
                         <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
@@ -43,10 +39,75 @@
                         <li><a href="{% url 'simple_view' %}#agents">Agents</a></li>
                         <li><a href="{% url 'simple_view' %}#about">About</a></li>  
                         <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>
-                        <li id="close-flyout"><span class="fas fa-times"></span></li>
                     </ul>
                 </nav>
             </div>
         </header>
-
     </div>
+
+    <section id="career-form-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;">Apply for a Position</h2>
+
+            <form method="post" enctype="multipart/form-data" style="max-width: 600px; margin: auto;">
+                {% csrf_token %}
+
+
+                <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="position">Position:</label>
+            <select id="position" name="position" required>
+                <option value="">Select a position</option>
+                <option value="Python Developer">Python Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Sales Executive">Sales Executive</option>
+                <option value="Property Manager">Property Manager</option>
+            </select>
+
+            <div class="file-upload-wrapper">
+                <label for="resume">Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                <span id="clear-file" style="display:none;">❌</span>
+            </div>
+            
+
+                <button type="submit" style="background-color: orange; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px;">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+       const fileInput = document.getElementById('resume');
+const clearFileBtn = document.getElementById('clear-file');
+
+// Show "X" when file is selected
+fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+        clearFileBtn.style.display = 'inline';
+    } else {
+        clearFileBtn.style.display = 'none';
+    }
+});
+
+// Click "X" to remove selected file
+clearFileBtn.addEventListener('click', () => {
+    fileInput.value = '';  // Clear the file
+    clearFileBtn.style.display = 'none'; // Hide the X
+});
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

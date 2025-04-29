@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'evolve',
         'USER': 'root',
-        'PASSWORD': '1234567890',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -122,6 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "/static/"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"myapp/static")
