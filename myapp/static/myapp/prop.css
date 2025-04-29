@@ -1,0 +1,255 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Common styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header Section */
+#header-hero-container {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#logo img {
+  height: 100px;
+}
+
+#logo span {
+  font-size: 28px;
+  color: orange;
+  margin-left: 8px;
+}
+
+nav {
+  position: relative;
+}
+
+#nav-menu {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+}
+
+#nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#nav-menu li a:hover,
+#nav-menu li a.active {
+  color: orange;
+}
+
+/* Hamburger Menu (for smaller screens, if needed) */
+.hamburger-menu {
+  display: none; /* hidden by default, can show with media queries */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu .strip {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+}
+
+/* Property Section */
+#properties {
+  padding: 60px 0;
+}
+
+#properties h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #333;
+}
+
+#properties-slider img {
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.property-details {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.property-details p.price {
+  font-size: 22px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.property-details span {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #777;
+}
+
+.property-details address {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Contact Section */
+#contact {
+  padding: 60px 0;
+  background: #fff;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#address-container {
+  max-width: 500px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+#address-container label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+}
+
+#address-container a {
+  display: block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 50px 20px;
+  font-size: 14px;
+}
+
+.footer-about,
+.footer-quick-links,
+.footer-subscribe {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-about h5,
+.footer-quick-links h5,
+.footer-subscribe h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: orange;
+}
+
+.footer-quick-links ul,
+.footer-subscribe ul {
+  list-style: none;
+}
+
+.footer-quick-links ul li,
+.footer-subscribe ul li {
+  margin-bottom: 10px;
+}
+
+.footer-quick-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-quick-links ul li a:hover {
+  color: orange;
+}
+
+#subscribe-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+#subscribe-container input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  flex: 1;
+}
+
+#subscribe-container button {
+  background: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: orange;
+}
+
+footer small {
+  text-align: center;
+  display: block;
+  margin-top: 30px;
+  color: #aaa;
+}
