@@ -1,48 +1,49 @@
+
 header {
     background-color: white;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: relative;
     z-index: 999;
-}
-
-.flex {
+  }
+  
+  .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-nav {
+  }
+  
+  nav {
     position: relative;
-}
-
-#nav-menu {
+  }
+  
+  #nav-menu {
     list-style: none;
     display: flex;
-    gap: 40px;
-}
-
-#nav-menu li a {
+    gap: 20px;
+  }
+  
+  #nav-menu li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
     padding: 8px 15px;
     transition: 0.3s;
-}
-
-#nav-menu li a:hover,
-#nav-menu li a.active {
+  }
+  
+  #nav-menu li a:hover,
+  #nav-menu li a.active {
     color: orange;
-}
-
-#hamburger {
+  }
+  
+  #hamburger {
     display: none;
     font-size: 28px;
     cursor: pointer;
-}
-
-/* Mobile Nav */
-@media (max-width: 768px) {
+  }
+  
+  /* Mobile Nav */
+  @media (max-width: 768px) {
     #nav-menu {
         display: none;
         flex-direction: column;
@@ -54,16 +55,558 @@ nav {
         padding: 20px;
         box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
     }
-
+  
     #nav-menu.active {
         display: flex;
     }
-
+  
     #hamburger {
         display: block;
     }
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
-}
+  }
+  
+  
+  .contact-wrapper {
+    display: flex; /* Enable flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center items horizontally on larger screens */
+    gap: 40px; /* Add space between the map and address */
+  }
+  
+  .map-container {
+    flex: 1; /* Allow the map to take up available space */
+    min-width: 300px; /* Ensure a minimum width for the map */
+  }
+  
+  .map-container iframe {
+    width: 100%; /* Make the iframe take the full width of its container */
+    height: 400px; /* Set the desired height for the map */
+    border: 0; /* Remove default iframe border */
+  }
+  
+  #address-container {
+    background: #efecec;
+    padding: 2rem;
+    box-sizing: border-box;
+    max-width: 400px; /* Adjust width as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left; /* Align text within the address container to the left */
+    flex: 1; /* Allow the address container to take up available space */
+    min-width: 300px; /* Ensure a minimum width for the address */
+  }
+  
+  #address-container label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    color: #383636;
+    text-align: left;
+  }
+  
+  #address-container address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: 1.6;
+    color: #3b3939;
+    text-align: left;
+  }
+  
+  #address-container a {
+    text-decoration: none;
+    color: #0b0b0b;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  
+  #address-container a:hover {
+    text-decoration: underline;
+  }
+  
+  #address-container span.fas {
+    margin-right: 0.5rem;
+    color: orange;
+  }
+  
+  /* Media query for smaller screens to stack map and address */
+  @media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+  
+    .map-container,
+    #address-container {
+        width: 100%; /* Take full width on smaller screens */
+        margin-bottom: 20px; /* Add some spacing between stacked items */
+    }
+  }
+  /* footer start */
+  body {
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.7;
+    scroll-padding-top: 18px;
+  }
+  
+  
+  .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  }
+  
+  .flex {
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  h5 {
+    font-size: 1rem;
+    font-family: "Playfair Display", serif;
+  }
+  
+  p {
+  margin: 0 0 1rem;
+  }
+  
+  
+  /* start: footer styles */
+  footer {
+  background: #333;
+  padding: 8rem 0;
+  }
+  
+  footer .flex {
+  padding-bottom: 6rem;
+  border-bottom: 1px solid #777;
+  }
+  
+  footer h5 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  }
+  
+  footer h5.follow-us {
+  margin-top: 1rem;
+  }
+  
+  footer .footer-about {
+    width: 47%;
+  }
+  
+  footer .footer-about p {
+  width: 65%;
+  }
+  
+  footer .footer-quick-links {
+    width: 16%;
+  }
+  
+  footer .footer-quick-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  footer .footer-quick-links ul li {
+    margin: 10px 0;
+  }
+  
+  footer .footer-quick-links ul li a {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  footer .footer-quick-links ul li a:hover {
+    color: #fff;
+  }
+  
+  footer .footer-subscribe {
+    width: 35%;
+  }
+  
+  #subscribe-container {
+    position: relative;
+  }
+  
+  footer .footer-subscribe input {
+    border-radius: 30px;
+    height: 43px;
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    border: 1px solid #6c757d;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 10px;
+    color: #fff;
+    box-sizing: border-box;
+    width: 80%;
+  }
+  
+  footer button.right-rounded {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: #f69314;
+    font-size: 16px;
+    color: #000;
+    padding: 10px 30px 9px;
+    line-height: 1.5;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    right: 0;
+  }
+  
+  footer button.right-rounded:hover {
+    background: #fff;
+  }
+  
+  footer .footer-subscribe ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  footer .footer-subscribe ul li {
+    display: inline-block;
+    margin: 0 16px;
+  }
+  
+  footer .footer-subscribe ul li:first-child {
+    margin-left: 0;
+  }
+  
+  footer .footer-subscribe ul li a {
+    text-decoration: none;
+    color: #777;
+  }
+  
+  footer .footer-subscribe ul li a:hover {
+    color: #fff;
+  }
+  
+  footer small {
+    margin-top: 3rem;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+  }
+  
+  footer small a {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  footer small a:hover {
+    color: #fff;
+  }
+  /* end: footer styles */
+  
+  /* start: media queries */
+  @media (max-width: 991px) {
+  #logo {
+      top: 1px;
+  }
+  
+  #nav-toggle {
+      display: block;
+  }
+  
+  nav ul {
+      position: fixed;
+      background: #fff;
+      right: -100%;
+      top: 0;
+      margin: 0;
+      padding: 2rem;
+      height: 100%;
+      width: 350;
+      box-sizing: border-box;
+      box-shadow: 5px 0 10px 3px #999;
+  }
+  
+  #close-flyout {
+      position: absolute;
+      right: 2rem;
+      top: 1.5rem;
+      font-size: 30px;
+      color: #777;
+      cursor: pointer;
+      display: block;
+      line-height: 1;
+      margin: 0;
+  }
+  
+  nav ul li {
+      display: block;
+      margin: 15px;
+  }
+  
+  nav ul li:first-child {
+      margin-top: 50px;
+  }
+  nav ul li a {
+      font-size: 20px;
+      color: #212529;
+  }
+  
+  nav ul li a.active,
+  nav ul li a:hover {
+      color: #f69314;
+  }
+  }
+  
+  @media (max-width: 767px) {
+  h1 {
+      font-size: 2rem;
+  }
+  
+  h2 {
+      font-size: 1.75rem;
+  }
+  
+  h3 {
+      font-size: 1.2rem;
+  }
+  
+  .large-paragraph {
+      font-size: 1rem;
+  }
+  
+  p {
+      font-size: 0.8rem;
+  }
+  
+  .container {
+      max-width: 540px;
+  }
+  
+  #hero .hero-text {
+      width: 400px;
+  }
+  
+  #agents .card {
+      width: 49%;
+  }
+  
+  #the-best .flex > img {
+      display: none;
+  }
+  
+  #the-best .flex > div {
+      width: 100%;
+  }
+  
+  #testimonials-slider p {
+      font-size: 1.2rem;
+  }
+  
+  #properties .container:before {
+      top: 1px;
+      font-size: 0.85rem;
+  }
+  
+  #properties-slider a.slick-arrow {
+      font-size: 0.85rem;
+  }
+  
+  #properties button.rounded {
+      width: 300px;
+  }
+  
+  #services .flex > div {
+      width: 48%;
+  }
+  
+  #contact .flex {
+      flex-wrap: wrap;
+  }
+  
+  #form-container {
+      width: 100%;
+      padding: 2rem;
+  }
+  
+  #address-container {
+      width: 100%;
+      margin-top: 2rem;
+  }
+  
+  footer {
+      padding: 6rem 0;
+  }
+  
+  footer .flex {
+      flex-wrap: wrap;
+  }
+  
+  footer .flex > div {
+      width: 100%;
+      margin-top: 1rem;
+  }
+  
+  footer .flex > div:first-child {
+      margin-top: 0;
+  }
+  
+  footer .footer-about p {
+      font-size: 1rem;
+      width: 100%;
+  }
+  
+  footer .footer-subscribe input {
+      width: 90%;
+  }
+  
+  footer h5.follow-us {
+      margin-top: 2rem;
+  }
+  }
+  
+  @media (max-width: 500px) {
+  #hero .hero-text {
+      width: 330px;
+  }
+  
+  #agents {
+      margin: 4rem 0 3rem;
+      padding: 0 0 3rem;
+  }
+  
+  #agents .card {
+      width: 100%;
+  }
+  
+  #agents p.large-paragraph {
+      width: 100%;
+  }
+  
+  #how-it-works .flex {
+      display: block;
+  }
+  
+  #how-it-works .flex > div {
+      width: 100%;
+      margin-top: 2rem;
+  }
+  
+  #properties button.rounded {
+      width: 250px;
+  }
+  
+  #services {
+      padding: 4rem 0 3rem;
+      margin: 4rem 0;
+  }
+  
+  #services .flex > div {
+      width: 100%;
+  }
+  
+  #testimonials {
+      margin-bottom: 4rem;
+  }
+  
+  #testimonials-slider p {
+      font-size: 1rem;
+  }
+  
+  #testimonials-slider .slick-arrow {
+      display: none !important;
+  }
+  
+  #contact {
+      padding: 4rem 0;
+  }
+  
+  #contact h2 {
+      margin-bottom: 2rem;
+  }
+  
+  #form-container {
+      padding: 1.5rem;
+  }
+  
+  footer {
+      padding: 4rem 0;
+  }
+  }
+  
+  @media (max-width: 400px) {
+  #hero .hero-text {
+   max-width: 275px;
+   width: 100%;
+  }
+  
+  #properties button.rounded {
+   max-width: 250px;
+   width: 100%;
+  }
+  
+  nav ul {
+  width: 200px;
+  }
+  }
+  
+  
+  .x-logo svg {
+  transition: transform 0.3s ease;
+  }
+  
+  .x-logo:hover svg {
+  transform: scale(1.2);
+  fill: #000000; /* or white if on dark bg */
+  }
+  
+  
+  .social-icons {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  justify-content: center;
+  }
+  
+  .social-icons li a {
+  font-size: 28px;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  }
+  
+  .social-icons li a:hover {
+  transform: scale(1.2);
+  }
+  
+  .facebook     { color: #3b5998; }
+  .twitter      { color: #1da1f2; }
+  .instagram    { color: #e1306c; } /* Instagram brand pink */
+  .linkedin     { color: #0077b5; }
+  .youtube      { color: #ff0000; }
+  
+  /* New styles to center the About title and address container */
+  #about .container h1 {
+  text-align: center;
+  }
+  
+  #contact .container .center-wrapper {
+  display: flex;
+  justify-content: center;
+  }
+  
+  #contact .container #address-container {
+  text-align: center; /* Center the text within the address container */
+  }
+
+  
