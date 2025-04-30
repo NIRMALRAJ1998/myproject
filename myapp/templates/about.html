@@ -1,123 +1,113 @@
-{% load static %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blessings</title>
 
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" href="{% static 'myapp/about1.css' %}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blessings</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="{% static 'myapp/properties.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-       
-      
-      
-</head>
-
-<body>
-    <div id="header-hero-container">
-        <header>
-            <div class="flex container">
-                <a id="logo" href="#">
-                    <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
-                    <span style="font-weight: bold; font: size 35px;letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
-                </a>
-                
-                <nav>
-            
-                    <button id="nav-toggle" class="hamburger-menu">
-                         <span class="strip"></span>
-                        <span class="strip"></span>
-                        <span class="strip"></span> 
-                    </button>
-
-                    <ul id="nav-menu">
-                        <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
-                        <li><a href="{% url 'properties' %}">Properties</a></li>
-                        <li><a href="{% url 'agent' %}">Agents</a></li> 
-                        <li><a href="{% url 'services' %}">Services</a></li>
-                        <li><a href="{% url 'career' %}">Career</a></li>
-                        <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>   
-                        <li id="close-flyout"><span class="fas fa-times"></span></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-    </div>
-
-    <section id="about">
-        <div class="container">
-            <h2>About</h2>
-          <div class="about-flex">
-            <div class="about-image">
-              <img src="{% static 'images/about1.avif' %}" alt="Property 1" />
-            </div>
-            <div class="about-content">
-              <h2>We Are the Best Real Estate Company</h2>
-              <p class="large-paragraph">
-                Our company was Founded in <strong>2014</strong> with the vision of delivering exceptional value to our customers. Over the years, we have grown into a trusted name, dedicated to innovation and excellence.
-              </p>
-              <p>
-                Our team’s dedication and deep understanding of the market ensure you make the best decisions for your property needs. Whether buying, selling, or investing, we are your trusted partner in real estate.
-              </p>
-              <ul>
-                <li>Our team of experienced professionals offers top-notch advice to help you make the right real estate decisions.</li>
-                <li>We tailor our approach to meet your unique needs, ensuring a seamless and stress-free experience.</li>
-                <li>With deep insights into the local and global real estate market, we bring you the best opportunities for buying, selling, and investing.</li>
-                <li>Your satisfaction is our priority. We go above and beyond to ensure your needs are met and your goals are achieved.</li>
-                <li>Our track record speaks for itself. We have successfully helped hundreds of clients find their dream properties and make profitable investments.</li>
-                <li>We have strong connections with property developers, legal advisors, and financial institutions to provide you with a complete real estate solution.</li>
-                <li>We believe in complete transparency in all our dealings, ensuring that our clients are always well-informed and confident.</li>
-                <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
-                <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
-              </ul>
-              <a href="{% url 'about' %}">
-                <button class="rounded">Learn More</button>
-              </a>
-
-            </div>
-          </div>
-        </div>
-    </section>
-
-      
+        
     
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
+    </head>
 
-           
-            <body>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745581856506!5m2!1sen!2sin"
-                width="1500" height="300" style="border: 1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-               
-                
-                <div class="center-wrapper">
-                    <div id="address-container">
-                        <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
-                        <address>
-                            Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
-                        </address>
+    <body>
+        <div id="header-hero-container">
+            <header>
+                <div class="flex container">
+                    <a id="logo" href="#">
+                        <img src="{% static 'images/logo.png' %}" alt="Blessing Properties" style="height: 100px; vertical-align: middle; margin-right: 1px;">
+                        <span style="font-weight: bold; font-size: 35px; letter-spacing: 1px; color: orange; text-decoration: none; vertical-align: middle;">BLESSING PROPERTIES</span>
+                    </a>
+                    
+                    <nav>
+                        
+                        <div id="hamburger">&#9776;</div>
 
-                        <label>Phone</label>
-                        <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
-
-                        <label>Email Address</label>
-                        <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
-                            <span class="fas fa-envelope" style="margin-right: 5px;"></span>
-                            blessinggroupsofcompany@gmail.com
-                        </a>
-                    </div>
+                        <ul id="nav-menu">
+                            <li><a href="{% url 'simple_view' %}" class="active">Home</a></li>
+                            <li><a href="{% url 'properties' %}">Properties</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'agent' %}">Agents</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>  
+                            <li><a href="{% url 'simple_view' %}#contact">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </body>
+            </header>
+        </div>
 
+        <section id="about">
+            <div class="container">
+                <h2>About</h2>
+            <div class="about-flex">
+                <div class="about-image">
+                <img src="{% static 'images/about1.avif' %}" alt="Property 1" />
+                </div>
+                <div class="about-content">
+                <h2>We Are the Best Real Estate Company</h2>
+                <p class="large-paragraph">
+                    Our company was Founded in <strong>2014</strong> with the vision of delivering exceptional value to our customers. Over the years, we have grown into a trusted name, dedicated to innovation and excellence.
+                </p>
+                <p>
+                    Our team’s dedication and deep understanding of the market ensure you make the best decisions for your property needs. Whether buying, selling, or investing, we are your trusted partner in real estate.
+                </p>
+                <ul>
+                    <li>Our team of experienced professionals offers top-notch advice to help you make the right real estate decisions.</li>
+                    <li>We tailor our approach to meet your unique needs, ensuring a seamless and stress-free experience.</li>
+                    <li>With deep insights into the local and global real estate market, we bring you the best opportunities for buying, selling, and investing.</li>
+                    <li>Your satisfaction is our priority. We go above and beyond to ensure your needs are met and your goals are achieved.</li>
+                    <li>Our track record speaks for itself. We have successfully helped hundreds of clients find their dream properties and make profitable investments.</li>
+                    <li>We have strong connections with property developers, legal advisors, and financial institutions to provide you with a complete real estate solution.</li>
+                    <li>We believe in complete transparency in all our dealings, ensuring that our clients are always well-informed and confident.</li>
+                    <li>Our relationship doesn't end after the transaction—we provide continued support, from property management to legal assistance.</li>
+                    <li>Recognized for excellence in customer service, market expertise, and integrity, we are proud recipients of industry awards.</li>
+                </ul>
+                <a href="{% url 'about' %}">
+                    <button class="rounded">Learn More</button>
+                </a>
+
+                </div>
+            </div>
+            </div>
+        </section>
+    
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
             
+
+                <div id="address-container">
+                    <label><span class="fas fa-map-marker-alt" style="margin-right: 5px; color: orange;"></span> Address</label>
+                            <address>
+                        Blessing properties, Plot No. 1, 100 Feet Rd, SIDCO Industrial Estate, Guindy, Chennai, Tamil Nadu 600032
+                            </address>
+
+                    <label>Phone</label>
+                    <a href="tel:+919319552561"><span class="fas fa-phone" style="margin-right: 5px;"></span>+91 9319552561</a>
+
+                    <label>Email Address</label>
+                    <a href="https://mail.google.com/mail/?view=cm&to=blessinggroupsofcompany@gmail.com" target="_blank">
+                        <span class="fas fa-envelope" style="margin-right: 5px;"></span>
+                        blessinggroupsofcompany@gmail.com
+                    </a>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.325352243278!2d80.20105907533278!3d13.014941413926115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52671455555557%3A0xc132a69138b8fdf6!2sOlympia%20Technology%20Park!5e0!3m2!1sen!2sin!4v1745486815657!5m2!1sen!2sin" 
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+            
+
+                </div>
             </div>
         </div>
     </section>
@@ -150,14 +140,13 @@
                 <ul>
                     <li>
                         <ul class="social-icons">
-                            <li><a href="https://www.facebook.com/" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
-                            <li><a href="https://twitter.com/" class="twitter"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="https://www.instagram.com/" class="instagram"><span class="fab fa-instagram"></span></a></li>
-                            <li><a href="https://www.linkedin.com/" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
-                            <li><a href="https://www.youtube.com/" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
-                          </ul>
-                          
-                          
+                            <li><a href="https://www.facebook.com/profile.php?id=61575398468365" class="facebook"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://twitter.com/BlessingPr83618" class="twitter"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://www.instagram.com/blessingproperties61" class="instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/blessing-properties-238003362" class="linkedin"><span class="fab fa-linkedin-in"></span></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCuvVecxXj-2SgEsTgCNaWiA" class="youtube" target="_blank"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+
             </div>
         </div>
 
@@ -167,8 +156,10 @@
 
         </small>
     </footer>
+    <script src="{% static 'myapp/script.js' %}"></script>
 
-    <script src="{% static 'myapp/script.js' %}"></script> 
-</body>
-</body>
-</html>
+
+
+
+        </body>
+    </html>
